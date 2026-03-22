@@ -3,7 +3,7 @@ import { ChatGroq } from "@langchain/groq";
 import { MixedbreadAIEmbeddings } from "@langchain/mixedbread-ai";
 import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
-import { PDFLoader } from "@langchain/document_loaders/fs/pdf";
+import { PDFLoader } from "langchain/document_loaders/fs/pdf";
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
