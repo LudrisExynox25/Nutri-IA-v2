@@ -1,9 +1,10 @@
 // app/api/chat/route.ts
 import { ChatGroq } from "@langchain/groq";
 import { MixedbreadAIEmbeddings } from "@langchain/mixedbread-ai";
-import { MemoryVectorStore } from "langchain/vectorstores/memory";
-import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
-import { PDFLoader } from "langchain/document_loaders/fs/pdf";
+// Cambiamos estas dos para que apunten a los paquetes nuevos que instalamos:
+import { MemoryVectorStore } from "@langchain/core/vectorstores";
+import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
+import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
