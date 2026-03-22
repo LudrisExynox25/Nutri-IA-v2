@@ -3,7 +3,7 @@ import { ChatGroq } from "@langchain/groq";
 import { MixedbreadAIEmbeddings } from "@langchain/mixedbread-ai";
 import { MemoryVectorStore } from "langchain/vectorstores/memory";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
-import { PDFLoader } from "langchain/document_loaders/fs/pdf";
+import { PDFLoader } from "@langchain/document_loaders/fs/pdf";
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
@@ -46,7 +46,7 @@ export async function POST(req: Request) {
   // 5. Groq responde con ese contexto
   const model = new ChatGroq({
     apiKey: process.env.GROQ_API_KEY,
-    modelName: "llama3-70b-8192",
+    modelName: "llama-3.1-8b-instant",
   });
 
   const response = await model.invoke([
